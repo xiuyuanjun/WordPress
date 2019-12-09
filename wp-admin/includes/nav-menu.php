@@ -219,8 +219,8 @@ function wp_nav_menu_post_type_meta_boxes() {
 		 *
 		 * @since 3.0.0
 		 *
-		 * @param object $meta_box_object The current object to add a menu items
-		 *                                meta box for.
+		 * @param WP_Post_Type|false $post_type The current object to add a menu items
+		 *                                      meta box for.
 		 */
 		$post_type = apply_filters( 'nav_menu_meta_box_object', $post_type );
 		if ( $post_type ) {
@@ -970,7 +970,7 @@ function wp_save_nav_menu_items( $menu_id = 0, $menu_data = array() ) {
  * @access private
  *
  * @param object $object The post type or taxonomy meta-object.
- * @return object The post type of taxonomy object.
+ * @return object The post type or taxonomy object.
  */
 function _wp_nav_menu_meta_box_object( $object = null ) {
 	if ( isset( $object->name ) ) {
